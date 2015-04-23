@@ -1,15 +1,52 @@
-Dokumentation AES
+<html lang="de">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Dokumentation AES</title>
+</head>
+<body>
+<h1>Dokumentation AES</h1>
 
-AES ist der Advanced Encryption Standard. Er wurde im Jahre 2000 vom NIST in einem Wettbewerb ausgeschrieben.
+AES ist der Advanced Encryption Standard. Er wurde im Jahre 1997 vom NIST international in einem Wettbewerb ausgeschrieben.
 In diesem Wettbewerb wurden international Kryptologen aufgerufen ihre Vorschläge einzureichen, welche bestimmten Anforderungen entsprachen.
-- AES sollte ein symmetrischer Algorithmus in Form einer Blockchiffre sein
-- AES die Länge der Blöcke wurde auf 128 Bit festgelegt
-- Leichte Umsetzung in Hard- oder Software
-- Überdurchschnittliche Geschwindigkeitswerte
-- Es sollten keine damals bekannten Angriffsmethoden anwendbar sein
-- Geringere Anforderungen an die Hardware stellen für Einsätze in z.B. Smartcards
-- Es sollten keine patentlich geschützten Funktionen genutzt werden und für jeden unentgeltlich zur Verfügung stehen
+<ul>
+	<li>AES sollte ein symmetrischer Algorithmus in Form einer Blockchiffre sein</li>
+	<li>AES die Länge der Blöcke wurde auf 128 Bit festgelegt</li>
+	<li>Leichte Umsetzung in Hard- oder Software</li>
+	<li>Überdurchschnittliche Geschwindigkeitswerte</li>
+	<li>Es sollten keine damals bekannten Angriffsmethoden anwendbar sein</li>
+	<li>Geringere Anforderungen an die Hardware stellen für Einsätze in z.B. Smartcards</li>
+	<li>Es sollten keine patentlich geschützten Funktionen genutzt werden und für jeden unentgeltlich zur Verfügung stehen</li>
+</ul>
+Nach zwei Konferenzen standen von 15 Einreichungen fünf Finalisten fest, die erneut international zur Kryptoanalyse ausgeschrieben wurden.<br>
+Da alle bei der Sicherheit zu sehr ähnlichen Ergebnissen führten, hat man sich für den belgischen Algorithmus Rijndael (gesprochen:"raindahl") entschieden. Dieser wurde nach seinen Entwicklern Daemen und Rijmen genannt. Der Hauptgrund für diesen Algorithmus war die geringe Komplexität und herrausragenden Geschwindigkeit auf allen getesteten Plattformen.<br>
+Nach einer erneuten Phase der Kryptoanalyse welche zu keinen Beanstandungen führte wurde Rijndael schließlich im Jahre 2000 durch das NIST zum Advanced Encryption Standard erklärt und ist seit dem für Verschlüsselungen bis zur höchsten Geheimhaltungsstufe in den USA zugelassen.<br>
+Diese Art des offenen Wettbewerbs wurde international sehr positiv bewertet.
 
-Nach zwei Konferenzen standen von 15 Einreihcungen fünf Finalisten fest, die erneut international zur Kryptoanalyse ausgeschrieben wurden.
-Da alle bei der Sicherheit zu sehr ähnlichen Ergebnissen führten hat man sich aufgrund der geringen Komplexität für den belgischen Algorithmus Rijndael entschieden.
-Nach einer erneuten Phase der Kryptoanalyse welche zu keinen Beanstandungen führte wurde Rijndael durch das NIST zum Advanced Encryption Standard erklärt und ist seit dem für Verschlüsselungen bis zur Geheimhaltungsstufe ____ vom US-____ empfohlen.
+<h2>Funktionsweise von Rijndael</h2>
+Der von Rijmen und Daemen entwickelte Algorithmus basiert auf mehreren Unterprozessen, die eine zweidimensionale Tabelle, Block genannt, mit einem Schlüssel verschlüsseln. Auch beim Schlüssel handelt es sich um eine zweidimensionale Tabelle. Dies findet in mehreren Durchläufen, sogenannten Runden, statt, deren Anzahl abhängig ist von der Länge des Schlüssels.<br>
+Bedeutung des Schlüssels:<br>
+Der Schlüssel ist nicht wie man erwarten könnte direkt das Passwort des Nutzers. Schon ein 128 Bit Schlüssel, was nicht mehr den aktuellen US-Sichherheitsanforderungen für die höchste Geheimhaltungsstufe entspricht, erfordert es sich 128 Binärzeichen zu merken. Das sind dann 32 Zeichen aus dem Hexadezimalsystem. Da diese Länge für Passwörter kaum praktikabel ist, wird der Schlüssel mithilfe spezifizierter Verfahren aus dem Passwort abgeleitet.
+<h3>Ablauf von Rijndael</h3>
+<ul>
+	<li>Erweiterung des Schlüssels (Key Schedule)</li>
+	<li>Vorrunde
+		<ul>
+			<li>Füge den ersten Rundenschlüssel hinzu (AddRoundKey)</li>
+	</ul></li>
+	<li>Vollständige Verschlüsselungsrunden
+		<ul>
+			<li>Übersetze in die S-Box (SubBytes)</li>
+			<li>Verschiebe Werte innerhalb der Zeilen (ShiftRows)</li>
+			<li>Verrechne die Zeilen mit einer Matrix (MixColumns)</li>
+			<li>Füge den aktuellen Rundenschlüssel hinzu (AddRoundKey)</li>
+	</ul></li>
+	<li>Letzte Runde
+		<ul>
+			<li>SubBytes</li>
+			<li>ShiftRows</li>
+			<li>AddRoundKey</li>
+	</ul></li>
+</ul>
+
+</body>
+</html>
