@@ -2,6 +2,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>Dokumentation AES</title>
+<style>
+	body{
+		font: 100% "Trebuchet MS", sans-serif;
+		margin: 25px;
+	}
+</style>
 </head>
 <body>
 <h1>Dokumentation AES</h1>
@@ -23,7 +29,7 @@ Nach einer erneuten Phase der Kryptoanalyse welche zu keinen Beanstandungen füh
 Diese Art des offenen Wettbewerbs wurde international sehr positiv bewertet und wurde in der Kryptographie mehrfach wiederholt.
 
 <h2>Funktionsweise von Rijndael</h2>
-Der von Rijmen und Daemen entwickelte Algorithmus basiert auf mehreren Unterprozessen, die eine zweidimensionale Tabelle aus vier Zeilen und Spalten, Block genannt, mit einem Schlüssel verschlüsseln. Auch beim Schlüssel handelt es sich um eine zweidimensionale Tabelle. Dies findet in mehreren Durchläufen, sogenannten Runden, statt, deren Anzahl abhängig ist von der Länge des Schlüssels. Wichtig ist auch, dass Rijndael nicht für jede Runde den selben Schlüssel verwendet, sondern diesen zuvor in einem Verfahren erweitert und daher für jede Runde einen vom Hauptschlüssel abgeleiteten Rundenschlüssel verwendet.<br>
+Der von Rijmen und Daemen entwickelte Algorithmus basiert auf mehreren Unterprozessen, die eine zweidimensionale Tabelle aus vier Zeilen und Spalten, Block genannt, mit einem Schlüssel verschlüsseln. Auch beim Schlüssel handelt es sich um eine zweidimensionale Tabelle. Dies findet in mehreren Durchläufen, sogenannten Runden, statt, deren Anzahl abhängig ist von der Länge des Schlüssels. Die Rundenzahl variiert zwischen 10 und 14 Durchläufen. Wichtig ist auch, dass Rijndael nicht für jede Runde den selben Schlüssel verwendet, sondern diesen zuvor in einem Verfahren erweitert und daher für jede Runde einen vom Hauptschlüssel abgeleiteten Rundenschlüssel verwendet.<br>
 Bedeutung des Schlüssels:<br>
 Der Schlüssel ist nicht wie man erwarten könnte direkt das Passwort des Nutzers. Schon ein 128 Bit Schlüssel, was nicht mehr den aktuellen US-Sicherheitsanforderungen für die höchste Geheimhaltungsstufe entspricht, erfordert es sich 128 Binärzeichen zu merken. Das sind dann 32 Zeichen aus dem Hexadezimalsystem. Da diese Länge für Passwörter kaum praktikabel ist, wird der Schlüssel mithilfe spezifizierter Verfahren aus dem Passwort abgeleitet.
 
@@ -58,8 +64,8 @@ Eine XOR Verknüpfung findet auf binärer Ebene statt und ähnelt der schriftlic
 <table border="1">
 <caption>Beispiel für ein Exklusives Oder:</caption>
 	<tr>
-		<td>Erster Wert</td>
-		<td>Zweiter Wert</td>
+		<td>Wert A</td>
+		<td>Wert B</td>
 		<td>XOR</td>
 	</tr>
 	<tr>
@@ -95,12 +101,43 @@ Nur in diesem Schritt kommt der Schlüssel des Nutzers zum Einsatz.
 
 <h4>Die Übersetzung in die S-Box - SubBytes</h4>
 Ein jeder Wert im Block wird durch einen zugehörigen Wert aus der S-Box ersetzt. Bei diesem Arbeitsschritt handelt es sich um eine Form der monoalphabetischen Verschlüsselung. Diese ist vergleichbar mit dem verwenden eines Alphabets, wo ein Buchstabe durch einen anderen aus diesem ersetzt wurde. Das Ergebnis kann nur der Empfänger lesen, der die Veränderung der Buchstaben kennt. Allerdings ist hier die S-Box öffentlich.<br>
-<b>Die S-Box</b>
+<b>Die S-Box:</b><br>
 Bei der S-Box handelt es sich um eine Tabelle, wo jedem Paar von Hexadezimalwerten ein anderes Paar zugewiesen wird. Sie ist eine Grundkomponente symmetrischer Verschlüsselungsverfahren.
-In verschiedenen Algorithmen kommen verschiedene S-Boxen zum Einsatz. Der Vorgänger von AES, der Data Encryption Standard, benötigte 8 S-Boxen. Die von Rijndael benötigte S-Box wurde mithilfe von Matrixmultiplikationen über einem besonderen endlichen Körper ausgewählt und anhand bestimmter Anforderungen getestet.
+In jedem Algorithmus kommen eigene, zum Teil mehrere, S-Boxen zum Einsatz. Der Vorgänger von AES, der Data Encryption Standard, benötigte 8 S-Boxen. Die von Rijndael benötigte S-Box wurde mithilfe von Matrixmultiplikationen über einem besonderen endlichen Körper ermittelt und anschließend anhand bestimmter Sicherhietsanforderungen getestet.
 
 <h4>Die Verschiebung von Werten innerhalb der Zeilen - ShiftRows</h4>
+Bei ShiftRows werden die einzelnen Werte innerhalb einer Zeile nach hinten verschoben. Die anderen Werte rücken dementsprechend nach. Die Anzahl der Verschiebungen hängt von der Zeile und von der Schlüssellänge ab.
+<table border="1">
+	<tr>
+		<td>Zeile</td>
+		<td>Verschiebung</td>
+	</tr>
+	<tr>
+		<td>Zeile 1:</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>Zeile 2:</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>Zeile 3:</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>Zeile 4:</td>
+		<td>3</td>
+	</tr>
+</table>
 
+<h4>Die Vermischung der Spalten - MixColumns</h4>
+
+
+
+<h2>Kryptoanalyse von AES</h2>
+Wie eingangs erwähnt wurde bereits beim Auswahlverfahren Rijndael international zur Kryptoanalyse ausgeschrieben und war gegen damals bekannte Verfahren abgesichert. Durch die Möglichkeit sehr lange Schlüssel zu verwenden ist es auch durch ausprobieren von Schlüsseln nicht effizient möglich Rijndael zu brechen.<br>
+Erst im Jahr 2001 ist es den Forschern Niels Ferguson, Richard Schroeppel und Doug Whiting gelungen einen theoretischen Angriff auf Rijndael zu entwerfen. Dies gelang ihnen dadurch, dass sie den Algorithmus in eine Formel schriebn, welche aus mehreren Verketteten Brüchen bestehen, wie in ABBILDUNG ___ dargestellt. Eine praktische Relevanz hat diese Erkenntnis jedoch bislang nicht.<br>
+Ein weiterer Angriff ist 2005 von Daniel J. Bernstein vorgestellt worden. Diesem gelang es mithilfe von bekannten Texten die er verschlüsselte und dem Messen der Zeiten für die Verschlüsselung den Schlüssel zu ermitteln. Dies liegt daran, dass die Umwandlungen, wie die S-Box und die MixColumns Tabellen, zur optimierung in Tabellen gespeichert sind und daher über die verbrauchte Zeit Rückschlüsse auf den Schlüssel ermöglichen. Ob dieses Szenario in der Praxis funktioniert ist jedoch äußerst umstritten.<br>
 
 </body>
 </html>
