@@ -31,7 +31,7 @@ Diese Art des offenen Wettbewerbs wurde international sehr positiv bewertet und 
 <h2>Funktionsweise von Rijndael</h2>
 Der von Rijmen und Daemen entwickelte Algorithmus basiert auf mehreren Unterprozessen, die eine zweidimensionale Tabelle aus vier Zeilen und Spalten, Block genannt, mit einem Schlüssel verschlüsseln. Auch beim Schlüssel handelt es sich um eine zweidimensionale Tabelle. Dies findet in mehreren Durchläufen, sogenannten Runden, statt, deren Anzahl abhängig ist von der Länge des Schlüssels. Die Rundenzahl variiert zwischen 10 und 14 Durchläufen. Wichtig ist auch, dass Rijndael nicht für jede Runde den selben Schlüssel verwendet, sondern diesen zuvor in einem Verfahren erweitert und daher für jede Runde einen vom Hauptschlüssel abgeleiteten Rundenschlüssel verwendet.<br>
 Bedeutung des Schlüssels:<br>
-Der Schlüssel ist nicht wie man erwarten könnte direkt das Passwort des Nutzers. Schon ein 128 Bit Schlüssel, was nicht mehr den aktuellen US-Sicherheitsanforderungen für die höchste Geheimhaltungsstufe entspricht, erfordert es sich 128 Binärzeichen zu merken. Das sind dann 32 Zeichen aus dem Hexadezimalsystem. Da diese Länge für Passwörter kaum praktikabel ist, wird der Schlüssel mithilfe spezifizierter Verfahren aus dem Passwort abgeleitet.
+Der Schlüssel ist nicht wie man erwarten könnte direkt das Passwort des Nutzers. Schon ein 128 Bit Schlüssel, was nicht mehr den aktuellen US-Sicherheitsanforderungen für die höchste Geheimhaltungsstufe entspricht, erfordert es sich 128 Binärzeichen zu merken. Das sind dann 32 Zeichen aus dem Hexadezimalsystem. Da diese Länge für Passwörter kaum praktikabel ist, wird der Schlüssel mithilfe spezifizierter Verfahren aus dem Passwort erweitert.
 
 <h3>Ablauf von Rijndael</h3>
 <ul>
@@ -130,14 +130,19 @@ Bei ShiftRows werden die einzelnen Werte innerhalb einer Zeile nach hinten versc
 	</tr>
 </table>
 
+<br>
 <h4>Die Vermischung der Spalten - MixColumns</h4>
 
 
 
 <h2>Kryptoanalyse von AES</h2>
 Wie eingangs erwähnt wurde bereits beim Auswahlverfahren Rijndael international zur Kryptoanalyse ausgeschrieben und war gegen damals bekannte Verfahren abgesichert. Durch die Möglichkeit sehr lange Schlüssel zu verwenden ist es auch durch ausprobieren von Schlüsseln nicht effizient möglich Rijndael zu brechen.<br>
-Erst im Jahr 2001 ist es den Forschern Niels Ferguson, Richard Schroeppel und Doug Whiting gelungen einen theoretischen Angriff auf Rijndael zu entwerfen. Dies gelang ihnen dadurch, dass sie den Algorithmus in eine Formel schriebn, welche aus mehreren Verketteten Brüchen bestehen, wie in ABBILDUNG ___ dargestellt. Eine praktische Relevanz hat diese Erkenntnis jedoch bislang nicht.<br>
-Ein weiterer Angriff ist 2005 von Daniel J. Bernstein vorgestellt worden. Diesem gelang es mithilfe von bekannten Texten die er verschlüsselte und dem Messen der Zeiten für die Verschlüsselung den Schlüssel zu ermitteln. Dies liegt daran, dass die Umwandlungen, wie die S-Box und die MixColumns Tabellen, zur optimierung in Tabellen gespeichert sind und daher über die verbrauchte Zeit Rückschlüsse auf den Schlüssel ermöglichen. Ob dieses Szenario in der Praxis funktioniert ist jedoch äußerst umstritten.<br>
+Erst im Jahr 2001 ist es den Forschern Niels Ferguson, Richard Schroeppel und Doug Whiting gelungen einen theoretischen Angriff auf Rijndael zu entwerfen. Dies gelang ihnen dadurch, dass sie den Algorithmus in eine Formel schrieben, welche aus mehreren verketteten Brüchen bestehen, wie in ABBILDUNG ___ dargestellt. Eine praktische Relevanz hat diese Erkenntnis jedoch bislang nicht.<br>
+Ein weiterer Angriff ist 2005 von Daniel J. Bernstein vorgestellt worden. Diesem gelang es mithilfe von bekannten Texten die er verschlüsselte und dem Messen der Zeiten für die Verschlüsselung den Schlüssel zu ermitteln. Dies liegt daran, dass die Umwandlungen, wie die S-Box und die MixColumns Tabellen, zur Optimierung in Tabellen gespeichert sind und daher über die verbrauchte Zeit Rückschlüsse auf den verwendeten Schlüssel möglich sind. Ob dieses Szenario in der Praxis funktioniert ist jedoch äußerst umstritten.<br>
+Im Jahr 2009 stellten Alex Biryukov and Dmitry Khovratovich einen weiteren theretischen Angriff auf Rijndael, der die benötigte Menge an auszuprobierenden Schlüsseln reduzierte. Bei der Anwendung eines Schlüssels von 256 Bit wäre der Schlüsselpool 2<sup>256</sup> durch diese Angriffsmethode auf 2<sup>119</sup> und später auf 2<sup>99,5</sup> reduzieren. Dies bedeutet, dass Rijndael nun in der theorie gebrochen ist. Allerdings liegt ein durchprobieren von 2<sup>99,5</sup> möglichen Kombinationen noch immer weit jenseits eines positiven Kosten-Nutzen-Verhältnisses für einen Angreifer, was ja das Ziel jeder Sicherheitmaßnahme ist.
+Dies sagte auch Bruce Schneier, als er diesen Angriff veröffentlichte: <br>
+<i>"While this attack is better than brute force -- and some cryptographers will describe the algorithm as "broken" because of it -- it is still far, far beyond our capabilities of computation. The attack is, and probably forever will be, theoretical. But remember: attacks always get better, they never get worse. Others will continue to improve on these numbers. While there's no reason to panic, no reason to stop using AES, no reason to insist that NIST choose another encryption standard[...]"</i><br>
+Aus: https://www.schneier.com/blog/archives/2009/07/new_attack_on_a.html
 
 </body>
 </html>
