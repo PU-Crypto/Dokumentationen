@@ -30,7 +30,7 @@ Diese Art des offenen Wettbewerbs wurde international sehr positiv bewertet und 
 
 <h2>Funktionsweise von Rijndael</h2>
 Der von Rijmen und Daemen entwickelte Algorithmus basiert auf mehreren Unterprozessen, die eine zweidimensionale Tabelle aus vier Zeilen und Spalten, Block genannt, mit einem Schlüssel verschlüsseln. Auch beim Schlüssel handelt es sich um eine zweidimensionale Tabelle. Dies findet in mehreren Durchläufen, sogenannten Runden, statt, deren Anzahl abhängig ist von der Länge des Schlüssels. Die Rundenzahl variiert zwischen 10 und 14 Durchläufen. Wichtig ist auch, dass Rijndael nicht für jede Runde den selben Schlüssel verwendet, sondern diesen zuvor in einem Verfahren erweitert und daher für jede Runde einen vom Hauptschlüssel abgeleiteten Rundenschlüssel verwendet.<br>
-Bedeutung des Schlüssels:<br>
+<b>Bedeutung des Schlüssels:</b><br>
 Der Schlüssel ist nicht wie man erwarten könnte direkt das Passwort des Nutzers. Schon ein 128 Bit Schlüssel, was nicht mehr den aktuellen US-Sicherheitsanforderungen für die höchste Geheimhaltungsstufe entspricht, erfordert es sich 128 Binärzeichen zu merken. Das sind dann 32 Zeichen aus dem Hexadezimalsystem. Da diese Länge für Passwörter kaum praktikabel ist, wird der Schlüssel mithilfe spezifizierter Verfahren aus dem Passwort erweitert.
 
 <h3>Ablauf von Rijndael</h3>
