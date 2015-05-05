@@ -1,0 +1,86 @@
+Allg:
+Monoalp.
+Substitution?
+
+Poly, vigenere:
+links entfernen und gedöns
+
+Tabelle ? Bild
+ Seite -letzter Satz ? „darauf“
+
+enigma 2te Zeile +t ; F!olgen
+
+meldungen mittgeschnitten werden .---> nichtmehr oder nicht mehr?
+
+ 
+otp:
+Vignere +2 genau so lang
++1 ? in sich
+
+drittletzte Gründe -r
+
+heißt es nicht rotes Telefon?
+Wie läuft die Schlüsselübermittlung dort ab?
+
+
+UTF-8
+wort enkodierung fehlt mir
+
+Steganographie:
+drittletzte Zeile anderen anderen
+
+Sym Asym:
+zischen
+
+erster Absatz letzte Zeile: , dass
+
+Asym
+ich würde hier auf das Problem von sym nochmal eingehen und sagen, dass hellman auf die idee gekommen ist, dass man mit etwas öffentlichem verschlüsselt, was nur mit etwas geheimen wider entschlüsselt werden kann ? Vergleich zu Vorhängeschlössern
+
+
+
+RSA:
+
+1977 es fehlt ein daher
+
+1983 gelang
+
+ergänzen: asym wird genutzt um einen schlüsselabtausch für sym zu sichern aufgrund von performance
+
+faktorisieren
+Verschl Entschlüsseln
+Ausgangstext
+
+
+Major design improvements required
+
+
+ElGamnmel
+1Satz....
+es fehlt etwas wie „betrieben wird“
+
+Historisch:
+kreiert
+
+
+Schlüsselgenerierung:
+satz. Ohne Inhalt
+
+private oder Privat aber nicht beides
+
+Die Verschlüsselung:
+;?
+Bit und Schlüssel
+
+Known Plaintext Angriff
+
+Chiphrat
+
+Ab 3.) Verständnis stark erschwert
+
+Auch hier
+major design improvements required
+
+
+Wünschenswert wären Überschriftenstile gewesen
+
