@@ -1,0 +1,54 @@
+Noch zu erledigen:
+begriffe:
+gui
+sha3
+sonstiges:
+frage+fazit für produktschrift
+ablaufplan rsa im anhang?
+quellen wo programmteile herkommen!!(euklid/sha3!!)
+funktionsweise elgamal  für doku.
+sha3 in produktschrift(unter hasch)
+elgamal in präsi
+
+pseudozufall.
+Mit dem Begriff Pseudozufall bezeichnet man Ereignisse, welche auf den ersten Blick zufällig scheinen, jedoch auf reproduzierbaren 
+Parametern basieren und somit nachberechenbar sind. So handelt es sich zum Beispiel bei einem Programm zur Generierung von Zufallszahlen um einen Pseudo-
+zufallsgenerator. Dies hat zur Folge, dass Regelmäßigkeiten in den "Zufallszahlen" auftreten. Je besser ein Generator ist, desto weniger Regelmäßigkeiten treten auf.
+Verwendet man ein Pseudozufälliges Passwort, so ist es einem Angreifer möglich, diese Regelmäßigkeiten auszunutzen und die Verschlüsselung zu brechen. Um diese Problematik zu
+umgehen greift man auf hohem Sicherheitsniveau z.B. auf physikalische Zufallsgeneratoren zurück.
+
+Physikalische Zufallsgeneratoren
+Der physikalische Zufallsgenerator nutzt physikalische Prozesse, um Zufallszahlen zu erstellen. Diese Prozesse sind zwar auch deterministisch und somit streng betrachtet auch
+nur pseudozufällig, jedoch wird auf Ereignisse zurückgegriffen, welche polykausal und somit mit heutigen Mittel nicht erklärbar/reproduzierbar sind. Beispiele für
+solche Verfahren sind das Aufzeichnen von Zerfallsprozessen von radioaktiven Stoffen oder von atmosspärischem Rauschen. Zwar bieten diese Verfahren "sichere Zufallszahlen", jedoch
+sind all diese Verfahren sehr zeit- und kostenaufwändig. Daher werden sie in der Praxis nur bedingt genutzt. 
+
+Modulo Rechnug:
+Unter dem mathematischen Operator Modulo versteht man die Division mit Rest. D.h. es wird Überprüft, wie oft der Divisor vollständig in den Dividend passt. Das Ergebnis der Modulo-
+rechnung ist die Differenz zwischen dem Dividend und der Summe des hineinpassenden Divisors. 
+Beispielrechnung: 
+17 mod 5 
+Die 5 passt 3 mal vollständig in die 17
+3*5= 15
+-> 17 mod 5 = 17-15 = 2
+
+Bit 
+unter einem Bit versteht man eine Ziffer im Dualsystem, d.h. sie kann den Wert 0 oder 1 annehmen. Bits werden verwendet, um Informationen darzustellen oder weiter zu geben.
+So kann z.B. in der Elektrotechnik 1  Strom und 0 keinen Strom bedeuten. Werden größere Informationsmengen bearbeitet, greift man auf die Bezeichnung Bytes zurück. Ein Byte
+entspricht 8 Bit, also acht Stelle, die jeweils 0 oder 1 sein können. Für größere Mengen werden entsprechend KiloByte(KB), MegaByte(MB), Gigabyte(GB) und Terabyte(TB) verwendet.
+Innerhalb dieser Kette, die noch länger Vortläuft, handelt es sich bei jeder neuen Einheit um eine Vergrößerung mit den Faktor Tausend.
+
+
+Fragen an gasch:
+ort bei doku punkt a.2?einfach trittau?
+bei B. wie kurz soll der kUrzüberblick?
+arbeitsprozess wie im protokoll nochmal grob wiedergeben?
+quellen in doku
+arbeitsergebnisse darstellen? d2
+was soll in e rein????
+
+An Mirko:
+also.. welche sprache verwendet und warum die? welcher editor und warum? 
+arbeitsprozess von Dir und Jan. womit warum angefangen. wie weiter. planänderungen/ ergänzugen? sprache lerenen?
+gab es planänderungen?
+json dateinen in doku erwähnen? 
