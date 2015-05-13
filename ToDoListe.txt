@@ -1,0 +1,25 @@
+Hier alle dinge sammeln, die noch i wie erledigt werden müssen. falls erledingttablle bitte aktuell halten
+
+sonstiges:
+-frage+fazit für produktschrift
+-quellen wo programmteile herkommen!!(euklid/sha3!!)--> Wohin?
+-funktionsweise/arbeitsprozess von  elgamal(implementierung)  für doku? eher nicht
+-elgamal in präsi --> still alive
+-beispiele bei substitution mit in anhnag?
+-gui produktschrift
+-Deckblatt doku 
+-deckblatt präsi?
+-präsentations/stand gestaltung
+-sha 3 in doku(+kurze anmerkung unter hash in produktschrift)
+-phase 3 doku
+
+
+Fragen an gasch:
+ort bei doku punkt a.2?einfach trittau?
+bei B. wie kurz soll der kUrzüberblick?
+arbeitsprozess wie im protokoll nochmal grob wiedergeben?
+quellen in doku
+arbeitsergebnisse darstellen? d2
+was soll in e rein????
+-quellen für gepasteten text wohin?
+--Materialien für Stand laptop, 2ter monitor, maus, tastatur
